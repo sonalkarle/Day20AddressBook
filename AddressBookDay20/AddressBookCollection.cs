@@ -8,7 +8,7 @@ namespace AddressBookDay13
 {
     public class Program
     {
-
+        Validation validation = new Validation();
         List<ContactDetails> contactDetailsList;
         private Dictionary<string, ContactDetails> contactDetailsMap;
         private Dictionary<string, Dictionary<string, ContactDetails>> multipleAddressBookMap;
