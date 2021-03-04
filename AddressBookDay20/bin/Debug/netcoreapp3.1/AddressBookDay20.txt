@@ -1,0 +1,32 @@
+addressBook,firstName,lastName,address,city,state,zip,phone Number,emailID
+Student,Ajinkya,Patil,Pant nagar,Mumbai,Maharashtra,400025,8806184085,patil@gmail.com
+Student,Priya,Kadam,Shivaji Chowk,Mumbai,Maharashtra,400011,880664052,kadam@gmail.com
+Student,Sachin,Deshmukh,Gokhale nagar,Pune,Maharashtra,400017,88060214103,deshmukh@gmail.com
+Student,Pooja,Gore,Swami chowk,Banglore,Karnataka,400517,8875811103,gore@gmail.com
+Student,Sheetal,Patel,Gandhi nagar,Ahmdabad,Gujrat,400017,8806154783,pawar@gmail.comAddress Book: Student
+This table contains student informaton in sorted manner
+Address Book: Student
+ Details of Ajinkya  Patil  are:  Address:  Pant nagar   City: Mumbai
+                                State: Maharashtra  Zip: 400025
+                                PhoneNumber: 8806184085
+                                Email:  patil@gmail.com 
+Address Book: Student
+ Details of Pooja  Gore  are:  Address:  Swami chowk   City: Banglore
+                                State: Karnataka  Zip: 400517
+                                PhoneNumber: 8875811103
+                                Email:  gore@gmail.com 
+Address Book: Student
+ Details of Priya  Kadam  are:  Address:  Shivaji Chowk   City: Mumbai
+                                State: Maharashtra  Zip: 400011
+                                PhoneNumber: 880664052
+                                Email:  kadam@gmail.com 
+Address Book: Student
+ Details of Sachin  Deshmukh  are:  Address:  Gokhale nagar   City: Pune
+                                State: Maharashtra  Zip: 400017
+                                PhoneNumber: 88060214103
+                                Email:  deshmukh@gmail.com 
+Address Book: Student
+ Details of Sheetal  Patel  are:  Address:  Gandhi nagar   City: Ahmdabad
+                                State: Gujrat  Zip: 400017
+                                PhoneNumber: 8806154783
+                                Email:  pawar@gmail.com 
