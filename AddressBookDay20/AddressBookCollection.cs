@@ -8,7 +8,7 @@ namespace AddressBookDay13
 {
     public class Program
     {
-
+        Validation validation = new Validation();
         List<ContactDetails> contactDetailsList;
         private Dictionary<string, ContactDetails> contactDetailsMap;
         private Dictionary<string, Dictionary<string, ContactDetails>> multipleAddressBookMap;
@@ -191,41 +191,6 @@ namespace AddressBookDay13
                 Console.WriteLine(book.toString());
             }
         }
-        /// <summary>
-        /// UC13:Ability to read file using file I/O
-        /// </summary>
-        public void ReadAFile()
-        {
-            string InputFile = @"C:\Users\User\source\repos\File IO\AddressBookDay20\AddressBookDay20\AddressBookDay20\bin\Debug\netcoreapp3.1\AddressBookDay20.txt";
-            using (StreamReader read = File.OpenText(InputFile))
-            {
-                string s = " ";
-                while ((s = read.ReadLine()) != null)
-                {
-                    Console.WriteLine(s);
-                }
-                read.Close();
-            }
-        }
-        /// <summary>
-        /// UC13:Ability to write file using file I/O
-        /// </summary>
-        public void WriteAFile()
-        {
-            string InputFile = @"C:\Users\User\source\repos\File IO\AddressBookDay20\AddressBookDay20\AddressBookDay20\bin\Debug\netcoreapp3.1\AddressBookDay20.txt";
-            using (StreamWriter write = File.AppendText(InputFile))
-            {
-                write.WriteLine("This table contains student informaton in sorted manner");
-                foreach (ContactDetails printInText in sortedBookList)
-                {
-                    write.WriteLine(printInText.toString());
-                }
-                write.Close();
-                Console.WriteLine(File.ReadAllText(InputFile));
-            }
-
-
-        }
-     
+       
     }
 }
