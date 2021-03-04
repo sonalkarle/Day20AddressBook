@@ -8,7 +8,7 @@ namespace AddressBookDay13
 {
     public class Program
     {
-        
+
         List<ContactDetails> contactDetailsList;
         private Dictionary<string, ContactDetails> contactDetailsMap;
         private Dictionary<string, Dictionary<string, ContactDetails>> multipleAddressBookMap;
@@ -21,6 +21,49 @@ namespace AddressBookDay13
             contactDetailsMap = new Dictionary<string, ContactDetails>();
             multipleAddressBookMap = new Dictionary<string, Dictionary<string, ContactDetails>>();
             sortedBookList = new List<ContactDetails>();
+
+        }
+        public void ContactlistEntry()
+        {
+            ContactDetails personEntered = new ContactDetails();
+            Console.WriteLine("Enter First name");
+            string firstName = Console.ReadLine();
+            validation.FirstName(firstName);
+            personEntered.firstName = firstName;
+
+            Console.WriteLine("Enter Last name");
+            string lastName = Console.ReadLine();
+            validation.LastName(lastName);
+            personEntered.lastName = lastName;
+
+            if (contactDetailsList.Find(i => personEntered.Equals(i)) != null)
+            {
+                Console.WriteLine("Person already Exists, enter new person!");
+                return;
+            }
+            Console.WriteLine("Enter Address");
+            string address = Console.ReadLine();
+            validation.Address(address);
+            personEntered.address = address;
+            Console.WriteLine("Enter City");
+            personEntered.city = Console.ReadLine();
+            Console.WriteLine("Enter State");
+            personEntered.state = Console.ReadLine();
+            Console.WriteLine("Enter Zip");
+            int zip = Convert.ToInt32(Console.ReadLine());
+            string zipString = zip.ToString();
+            validation.Zip(zipString);
+            personEntered.zip = zip;
+            Console.WriteLine("Enter phoneNumber");
+            long phoneNumber = Convert.ToInt64(Console.ReadLine());
+            string phoneNumberString = phoneNumber.ToString();
+            validation.MobileNumber(phoneNumberString);
+            personEntered.phoneNumber = phoneNumber;
+            Console.WriteLine("Enter Email");
+            string email = Console.ReadLine();
+            validation.EmailAddress(email);
+            personEntered.email = email;
+            contactDetailsList.Add(personEntered);
 
         }
         /// <summary>
@@ -60,11 +103,11 @@ namespace AddressBookDay13
             }
 
         }
-        public List<ContactDetails> AddDetails( string addressBook,string firstName, string LastName, string address, string city, string state, int zip, long phoneNumber, string email)
+        public List<ContactDetails> AddDetails(string addressBook, string firstName, string LastName, string address, string city, string state, int zip, long phoneNumber, string email)
         {
-            ContactDetails contactDetails = new ContactDetails( addressBook,firstName, LastName, address, city, state, zip, phoneNumber, email);
+            ContactDetails contactDetails = new ContactDetails(addressBook, firstName, LastName, address, city, state, zip, phoneNumber, email);
             contactDetailsList.Add(contactDetails);
-            
+
             return contactDetailsList;
 
         }
@@ -82,7 +125,7 @@ namespace AddressBookDay13
 
         }
 
-      
+
         public void AddressBook(string addressBook)
         {
             multipleAddressBookMap.Add(addressBook, contactDetailsMap);
@@ -181,12 +224,8 @@ namespace AddressBookDay13
                 Console.WriteLine(File.ReadAllText(InputFile));
             }
 
-              
-                
-            
-           
+
         }
-
-
+     
     }
 }
