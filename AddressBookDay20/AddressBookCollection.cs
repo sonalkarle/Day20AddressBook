@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace AddressBookDay13
+namespace AddressBookDay20
 {
     public class Program
     {
-
+        Validation validation = new Validation();
         List<ContactDetails> contactDetailsList;
         private Dictionary<string, ContactDetails> contactDetailsMap;
         private Dictionary<string, Dictionary<string, ContactDetails>> multipleAddressBookMap;
@@ -66,43 +66,7 @@ namespace AddressBookDay13
             contactDetailsList.Add(personEntered);
 
         }
-        /// <summary>
-        /// UC12: Sorted person in alphabatical order as per the city or zip or state
-        /// </summary>
-        public void SortByCityOrStateOrZip()
-        {
-            List<ContactDetails> sortedList;
-            Console.WriteLine(" Sort the contacts by City or State or Zip ");
-            Console.WriteLine("1: Entered for sorting list by City ");
-            Console.WriteLine("2: Entered for sorting list by State");
-            Console.WriteLine("3: Entered for sorting list by zip");
-            int option = Convert.ToInt32(Console.ReadLine());
-            switch (option)
-            {
-                case 1:
-                    sortedList = contactDetailsList.OrderBy(x => x.city).ToList();
-                    foreach (ContactDetails book in sortedList)
-                    {
-                        Console.WriteLine(book.toString());
-                    }
-                    break;
-                case 2:
-                    sortedList = contactDetailsList.OrderBy(x => x.state).ToList();
-                    foreach (ContactDetails book in sortedList)
-                    {
-                        Console.WriteLine(book.toString());
-                    }
-                    break;
-                case 3:
-                    sortedList = contactDetailsList.OrderBy(x => x.zip).ToList();
-                    foreach (ContactDetails book in sortedList)
-                    {
-                        Console.WriteLine(book.toString());
-                    }
-                    break;
-            }
-
-        }
+        
         public List<ContactDetails> AddDetails(string addressBook, string firstName, string LastName, string address, string city, string state, int zip, long phoneNumber, string email)
         {
             ContactDetails contactDetails = new ContactDetails(addressBook, firstName, LastName, address, city, state, zip, phoneNumber, email);
@@ -191,41 +155,7 @@ namespace AddressBookDay13
                 Console.WriteLine(book.toString());
             }
         }
-        /// <summary>
-        /// UC13:Ability to read file using file I/O
-        /// </summary>
-        public void ReadAFile()
-        {
-            string InputFile = @"C:\Users\User\source\repos\File IO\AddressBookDay20\AddressBookDay20\AddressBookDay20\bin\Debug\netcoreapp3.1\AddressBookDay20.txt";
-            using (StreamReader read = File.OpenText(InputFile))
-            {
-                string s = " ";
-                while ((s = read.ReadLine()) != null)
-                {
-                    Console.WriteLine(s);
-                }
-                read.Close();
-            }
-        }
-        /// <summary>
-        /// UC13:Ability to write file using file I/O
-        /// </summary>
-        public void WriteAFile()
-        {
-            string InputFile = @"C:\Users\User\source\repos\File IO\AddressBookDay20\AddressBookDay20\AddressBookDay20\bin\Debug\netcoreapp3.1\AddressBookDay20.txt";
-            using (StreamWriter write = File.AppendText(InputFile))
-            {
-                write.WriteLine("This table contains student informaton in sorted manner");
-                foreach (ContactDetails printInText in sortedBookList)
-                {
-                    write.WriteLine(printInText.toString());
-                }
-                write.Close();
-                Console.WriteLine(File.ReadAllText(InputFile));
-            }
-
-
-        }
+        
      
     }
 }

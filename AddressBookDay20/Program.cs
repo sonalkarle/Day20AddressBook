@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AddressBookDay13
+namespace AddressBookDay20
 {
    public class AddressBook
     {
@@ -10,6 +10,7 @@ namespace AddressBookDay13
 
             Console.WriteLine(" Welcome to Address Book System ");
             Program studentBook = new Program();
+            Program newAddressBook = new Program();
        
 
             //Address book created  for student
@@ -34,6 +35,7 @@ namespace AddressBookDay13
                 Console.WriteLine("5: Display by sorted City or zip ");
                 Console.WriteLine("6: Read address book from file");
                 Console.WriteLine("7: Write address book from file");
+                Console.WriteLine("8: Enter the contact detals in another address book");
                 Console.WriteLine("Enter the choice want to perform the function");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
@@ -60,6 +62,8 @@ namespace AddressBookDay13
                         studentBook.SortByFirstName();
                        studentBook.WriteAFile();
                         break;
+                    case 8:
+                        newAddressBook.
                        
 
 
